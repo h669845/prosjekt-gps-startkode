@@ -37,17 +37,30 @@ public class GPSData {
 
 	public boolean insert(String time, String latitude, String longitude, String elevation) {
 
-		GPSPoint gpspoint;
-
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO 
+		
+		GPSPoint gpspoint = GPSDataConverter.convert(time, latitude, longitude, elevation);
+		
+		return insertGPS(gpspoint);
 		
 	}
 
-	public void print() {
+	private int parseInt(String time) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
-		throw new UnsupportedOperationException(TODO.method());
+	public void print() {
+		
+		System.out.println("====== GPS Data - START ======");
+		
+		for (int i = 0; i < gpspoints.length; i++){
+			String text = gpspoints[i].toString();
+			System.out.print(text);
+		}
+		
+		System.out.println("====== GPS Data - SLUTT ======");
+
+		
 
 		// TODO 
 	}

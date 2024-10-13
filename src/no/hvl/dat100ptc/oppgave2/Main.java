@@ -9,5 +9,15 @@ public class Main {
 
 		// TODO
 		
+		GPSPoint point1 = new GPSPoint(1, 3.2, 4.5, 6.2);
+		GPSPoint point2 = new GPSPoint(1, 1.2, 6.5, 6.5);
+		
+		GPSData gpsData = new GPSData(2);
+		
+		gpsData.insertGPS(point1);
+		gpsData.insertGPS(point2);
+		
+		gpsData.print();
+		
 	}
 }
