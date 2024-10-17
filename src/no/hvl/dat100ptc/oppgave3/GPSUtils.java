@@ -118,28 +118,20 @@ public class GPSUtils {
 		String timestr;
 		String TIMESEP = ":";
 		
-		String h, m, s;
-		
 		int hh = secs / 3600;
 		int mm = (secs % 3600) / 60;
 		int ss = secs % 60;
 		
+		String h = "  " + hh;
+		String m = "" + mm;
+		String s = "" + ss;
+		
 		if (hh<10) {
 			h = "  0%s";
-		} else {
-			h = "  " + hh;
-		}
-		
-		if (mm<10) {
+		} if (mm<10) {
 			m = "0%s";
-		} else {
-			m = "" + mm;
-		}
-		
-		if (ss<10) {
+		} if (ss<=10) {
 			s = "0%s";
-		} else {
-			s = "" + ss;
 		}
 		
 		String formatert = h + TIMESEP + m + TIMESEP + s;
@@ -156,10 +148,9 @@ public class GPSUtils {
 
 		String str;
 
+		double avrundet = ceil(d * 100) / 100;
 		
-		throw new UnsupportedOperationException(TODO.method());
-		
-		// TODO
+		return "      " + avrundet;
 		
 	}
 }
