@@ -25,25 +25,39 @@ public class GPSUtils {
 	public static double findMin(double[] da) {
 
 		double min;
-
-		// TODO 
-		throw new UnsupportedOperationException(TODO.method());
+		
+		min = da[0];
+		
+		for (double d : da) {
+			if (d < min) {
+				min = d;
+			}
+		}
+		
+		return min;
 		
 	}
 
 	public static double[] getLatitudes(GPSPoint[] gpspoints) {
-
-		throw new UnsupportedOperationException(TODO.method());
 		
-		// TODO
+		double[] arr = new double[gpspoints.length];
+		
+		for (int i = 0; i<gpspoints.length; i++) {
+			arr[i] = gpspoints[i].getLatitude();
+		}
+		
+		return arr;
 	}
 
 	public static double[] getLongitudes(GPSPoint[] gpspoints) {
 
+		double[] arr = new double[gpspoints.length];
 		
-		throw new UnsupportedOperationException(TODO.method());
+		for (int i = 0; i<gpspoints.length; i++) {
+			arr[i] = gpspoints[i].getLongitude();
+		}
 		
-		// TODO 
+		return arr;
 
 	}
 
