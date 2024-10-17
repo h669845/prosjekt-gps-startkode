@@ -117,10 +117,36 @@ public class GPSUtils {
 
 		String timestr;
 		String TIMESEP = ":";
-
-		throw new UnsupportedOperationException(TODO.method());
 		
-		// TODO 
+		String h, m, s;
+		
+		int hh = secs / 3600;
+		int mm = (secs % 3600) / 60;
+		int ss = secs % 60;
+		
+		if (hh<10) {
+			h = "  0%s";
+		} else {
+			h = "  " + hh;
+		}
+		
+		if (mm<10) {
+			m = "0%s";
+		} else {
+			m = "" + mm;
+		}
+		
+		if (ss<10) {
+			s = "0%s";
+		} else {
+			s = "" + ss;
+		}
+		
+		String formatert = h + TIMESEP + m + TIMESEP + s;
+		
+		timestr = String.format(formatert, hh, mm, ss);
+		
+		return timestr;
 		
 	}
 	
