@@ -24,8 +24,8 @@ public class GPSUtils {
 
 	public static double findMin(double[] da) {
 
+
 		double min; 
-		
 		min = da[0];
 		
 		for (double d : da) {
@@ -47,8 +47,6 @@ public class GPSUtils {
 		}
 		
 		return tabell;
-		
-		// TODO
 	}
 
 	public static double[] getLongitudes(GPSPoint[] gpspoints) {
@@ -60,8 +58,6 @@ public class GPSUtils {
 		}
 		
 		return tabell;
-		
-		// TODO 
 
 	}
 
@@ -69,7 +65,7 @@ public class GPSUtils {
 
 	public static double distance(GPSPoint gpspoint1, GPSPoint gpspoint2) {
 
-		double latitude1 = Math.toRadians(gpspoint1.getLatitude());
+		 double latitude1 = Math.toRadians(gpspoint1.getLatitude());
 		  double longitude1 = Math.toRadians(gpspoint1.getLongitude());
 		  double latitude2 = Math.toRadians(gpspoint2.getLatitude());
 		  double longitude2 = Math.toRadians(gpspoint2.getLongitude());
@@ -90,17 +86,15 @@ public class GPSUtils {
 	private static double compute_a(double phi1, double phi2, double deltaphi, double deltadelta) {
 	
 		 return Math.pow(Math.sin(deltaphi / 2), 2) + Math.cos(phi1) * Math.cos(phi2) * Math.pow(Math.sin(deltadelta / 2), 2);
-		
-		// TODO 
 
 	}
+	
 
 	private static double compute_c(double a) {
+
 		
 		return 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-		
-		
-		// TODO 
+
 
 	}
 
@@ -110,15 +104,13 @@ public class GPSUtils {
 		int secs;
 		double speed;
 		
+
 		double distance = distance(gpspoint1, gpspoint2);
 		
 	    secs = gpspoint2.getTime() - gpspoint1.getTime();
 	    speed = distance / secs;
 	    
 	    return speed;
-		
-		// TODO
-
 	}
 
 	public static String formatTime(int secs) {
