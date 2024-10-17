@@ -29,9 +29,14 @@ public class GPSComputer {
 	
 	public double totalDistance() {
 
-		double distance = 0;
+		double totalDistance = 0;
+		for (int i = 0; i < gpspoints.length-1; i++) {
+			totalDistance += GPSUtils.distance(gpspoints[i], gpspoints[i+1]);
+		}
+		
+		return totalDistance;
 
-		throw new UnsupportedOperationException(TODO.method());
+		
 
 		// TODO
 
@@ -40,17 +45,32 @@ public class GPSComputer {
 	public double totalElevation() {
 
 		double elevation = 0;
+		
+		for (int i = 0; i < gpspoints.length-1; i++) {
+			double diff = gpspoints[i+1].getElevation() - gpspoints[i].getElevation();
+            if (diff > 0) {
+                elevation += diff;
+            }
+		}
+		
+		return elevation;
 
-		throw new UnsupportedOperationException(TODO.method());
+		
 		
 		// TODO 
 		
 	}
 
 	public int totalTime() {
+		
+
+		int time = 0;
+
+		time = gpspoints[gpspoints.length - 1].getTime() - gpspoints[0].getTime();
+
+		return time;
 
 		// TODO
-		throw new UnsupportedOperationException(TODO.method());
 		
 	}
 		
